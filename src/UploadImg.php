@@ -17,16 +17,6 @@ class Image implements \ArrayAccess
     protected $name;
 
     /**
-     * @var int The image width in pixels
-     */
-   // protected $width;
-
-    /**
-     * @var int The image height in pixels
-     */
-   // protected $height;
-
-    /**
      * @var string The image mime type (extension)
      */
     protected $mime;
@@ -45,16 +35,6 @@ class Image implements \ArrayAccess
      * @var array A json format of all information about an image
      */
     protected $serialize = array();
-
-    /**
-     * @var array The min and max image size allowed for upload (in bytes)
-     */
-   // protected $size = array(100, 500000);
-
-    /**
-     * @var array The max height and width image allowed
-     */
-    //protected $dimensions = array(5000, 5000);
 
     /**
      * @var array The mime types allowed for upload
@@ -170,20 +150,6 @@ class Image implements \ArrayAccess
     }
 
     /**
-     * Sets acceptable max image height and width
-     *
-     * @param $maxWidth int max width value
-     * @param $maxHeight int max height value
-     *
-     * @return $this
-     */
-    /*public function setDimension($maxWidth, $maxHeight)
-    {
-        $this->dimensions = array($maxWidth, $maxHeight);
-        return $this;
-    }*/
-
-    /**
      * Returns the full path of the image ex 'location/image.mime'
      *
      * @return string
@@ -193,30 +159,6 @@ class Image implements \ArrayAccess
         $this->fullPath = $this->location . '/' . $this->name . '.' . $this->mime;
         return $this->fullPath;
     }
-
-    /**
-     * Returns the image size in bytes
-     *
-     * @return int
-     */
-   /* public function getSize()
-    {
-        return (int)$this->_files['size'];
-    }*/
-
-    /**
-     * Define a min and max image size for uploading
-     *
-     * @param $min int minimum value in bytes
-     * @param $max int maximum value in bytes
-     *
-     * @return $this
-     */
-   /* public function setSize($min, $max)
-    {
-        $this->size = array($min, $max);
-        return $this;
-    }*/
 
     /**
      * Returns a JSON format of the image width, height, name, mime ...
@@ -307,33 +249,7 @@ class Image implements \ArrayAccess
 
         /* initialize image properties */
         $image->name = $image->getName();
-       // $image->width = $image->getWidth();
-        //$image->height = $image->getHeight();
         $image->location = $image->getLocation();
-
-        /* get image sizes */
-      //  list($minSize, $maxSize) = $image->size;
-
-        /* check image size based on the settings */
-       /* if ($files['size'] < $minSize || $files['size'] > $maxSize) {
-            $min = intval($minSize / 1000) ?: 1;
-            $max = intval($maxSize / 1000) ?: 1;
-            $image->error = 'Image size should be at least ' . $min . ' KB, and no more than ' . $max . ' KB';
-            return null;
-        }*/
-
-        /* check image dimension */
-      //  list($allowedWidth, $allowedHeight) = $image->dimensions;
-
-       /* if ($image->height > $allowedHeight || $image->width > $allowedWidth) {
-            $image->error = 'Image height/width should be less than ' . $allowedHeight . '/' . $allowedWidth . ' pixels';
-            return false;
-        }*/
-
-       /* if ($image->height < 2 || $image->width < 2) {
-            $image->error = 'Image height/width too small or corrupted.';
-            return false;
-        }*/
 
         /* set and get folder name */
         $image->fullPath = $image->location . '/' . $image->name . '.' . $image->mime;
@@ -388,36 +304,6 @@ class Image implements \ArrayAccess
 
         return $this;
     }
-
-    /**
-     * Returns the image width
-     *
-     * @return int
-     */
-    /*public function getWidth()
-    {
-        if ($this->width != null) {
-            return $this->width;
-        }
-
-        list($width) = getImageSize($this->_files['tmp_name']);
-        return $width;
-    }*/
-
-    /**
-     * Returns the image height in pixels
-     *
-     * @return int
-     */
-   /* public function getHeight()
-    {
-        if ($this->height != null) {
-            return $this->height;
-        }
-
-        list(, $height) = getImageSize($this->_files['tmp_name']);
-        return $height;
-    }*/
 
     /**
      * Returns the storage / folder name
