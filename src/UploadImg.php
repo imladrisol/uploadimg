@@ -441,7 +441,7 @@ class Image implements \ArrayAccess
      *
      * @return $this
      */
-    public function setLocation($dir = 'bulletproof', $permission = 0666)
+    public function setLocation($dir = 'images  ', $permission = 0666)
     {
 
         if (!file_exists($dir) && !is_dir($dir) && !$this->location) {
