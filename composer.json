@@ -1,11 +1,11 @@
 {
-  "name": "imladrisol/uploadimages",
+  "name": "imladrisol/uploadimg",
   "description": "Composer package for uploading images",
   "keywords":[
     "image",
     "upload"
   ],
-  "homepage":"https://github.com/imladrisol/uploadimages",
+  "homepage":"https://github.com/imladrisol/uploadimg",
   "license": "proprietary",
   "authors": [
     {
