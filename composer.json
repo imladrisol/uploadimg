@@ -1,0 +1,34 @@
+{
+  "name": "imladrisol/uploadimages",
+  "description": "Composer package for uploading images",
+  "keywords":[
+    "image",
+    "upload"
+  ],
+  "homepage":"https://github.com/imladrisol/uploadimages",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Olha Nevinchana",
+      "email": "imladrisol@gmail.com"
+    }
+  ],
+  "require": {
+      "php" : ">=5.4.0",
+      "quzzlehttp/quzzle" : "~5.0"
+  },
+  "require-dev" : {
+    "phpunit/phpunit" : "4.8.9"
+  },
+  "autoload":{
+    "files":[
+      "src/UploadImg.php"
+    ]
+  },
+  "autoload-dev":{
+    "psr-4":{
+      "UploadImg\\Tests\\":"test/"
+    }
+  }
+
+}
