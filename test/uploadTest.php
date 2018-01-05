@@ -1,4 +1,6 @@
 <?php
+$loader = require('../vendor/autoload.php');
+$loader->add('', __DIR__ . '/test');
 
 // backward compatibility
 if (!class_exists('\PHPUnit\Framework\TestCase') &&
@@ -7,7 +9,7 @@ if (!class_exists('\PHPUnit\Framework\TestCase') &&
 }
 
 use TestBootstrap\UploadImgTest;
- 
+
 class uploadTest extends  \PHPUnit\Framework\TestCase
 {
     public $uploadimg,
